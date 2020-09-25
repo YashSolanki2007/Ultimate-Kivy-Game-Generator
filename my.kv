@@ -1,0 +1,64 @@
+WindowManager:
+    MainWindow:
+    SecondWindow
+    ThirdWindow
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 3
+
+            Label:
+                text: "Ultimate Game Generator Made By Yash Solanki"
+
+        Button:
+            text: "Go To Game Generator"
+            on_release:
+                app.root.current = "second"
+
+        Button:
+            text: "About"
+            on_release: app.root.current = "third"
+
+<SecondWindow>:
+    name: "second"
+    game: game
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 1
+
+            Label:
+                text: "Click The Button To Play The Game"
+
+            Button:
+                id: game
+                text: "Play Game"
+                on_press: root.btn()
+
+            Button:
+                text: "Go Back"
+                on_release: app.root.current = "main"
+
+
+<ThirdWindow>:
+    name: "third"
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 1
+
+            Label:
+                text: "This App contains a truck load of cool atari games randomly chosen and all of this is made by Yash Solanki"
+
+            Button:
+                text: "Go Back"
+                on_release: app.root.current = "main"
